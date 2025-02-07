@@ -233,13 +233,38 @@ require_once('./libraries/includes.php');
                                 <h3 class="text-center">FULL ASSEMBLY (AUTO INSERT TYPE)</h3>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
+                                        <!-- <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
                                             <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Full Assembly</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select" id="" name="" style="width: 100%;">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn btn-sm btn-success" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
+                                        </div> -->
+
+                                        <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -249,12 +274,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">#SP Assy.</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -264,12 +298,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">#LB / SD-GP / #LO Assy / #ME Assy <br> / #MO Assy. / #CV Assembly</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -286,12 +329,21 @@ require_once('./libraries/includes.php');
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Full Assembly</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -301,12 +353,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">#SP Assy.</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -316,12 +377,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">#LB / SD-GP / #LO Assy / #ME Assy <br> / #MO Assy. / #CV Assembly</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -338,12 +408,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Pre-Visual</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -353,12 +432,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">First</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -368,12 +456,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Final</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -385,12 +482,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">PBI</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -400,12 +506,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Overall</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -415,12 +530,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Rework</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -437,12 +561,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Pre-Visual</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -452,12 +585,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">First</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -467,12 +609,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Final</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -484,12 +635,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">PBI</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -499,12 +659,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Overall</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -514,12 +683,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Rework</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -536,12 +714,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Insulator Assembly (#LT Check/#LT Prep. /<br> CS Installation/#LB Prep/GP Prep./<br>E-ring Installation/E-ring Check)</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -551,12 +738,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Sorting</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -566,12 +762,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Prov. Insertion (Manual)</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -583,12 +788,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">#ME Installation/ <br>#MO Installation</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -605,12 +819,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Insulator Assembly (#LT Check/#LT Prep. /<br> CS Installation/#LB Prep/GP Prep./<br>E-ring Installation/E-ring Check)</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -620,12 +843,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Sorting</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -635,12 +867,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Prov. Insertion (Manual)</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -652,12 +893,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">#ME Installation/ <br>#MO Installation</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -674,12 +924,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Auto Insertion</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -689,12 +948,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">CIM/Auto  #MO Pressing /<br> #LO,#CV Assembly Machine/<br> Unloading of Units Auto IN-A Assy /<br> Auto Pin Press / Auto Full Assy</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -704,12 +972,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Printing</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -721,12 +998,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">CT Cutting </span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -736,12 +1022,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Gluing / Oven Curing</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -751,12 +1046,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">#ME Press / #MO Press <br>/ #SF Press/ME inserter/#LB Install'n <br> (Machine)/#CS Detection / Air Pressing</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -768,12 +1072,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Airblowing </span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -783,12 +1096,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">MPC/HVT</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -805,12 +1127,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Auto Insertion</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -820,12 +1151,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">CIM/Auto  #MO Pressing /<br> #LO,#CV Assembly Machine/<br> Unloading of Units Auto IN-A Assy /<br> Auto Pin Press / Auto Full Assy</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -835,12 +1175,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Printing</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -852,12 +1201,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">CT Cutting </span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -867,12 +1225,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Gluing / Oven Curing</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
@@ -882,12 +1249,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">#ME Press / #MO Press <br>/ #SF Press/ME inserter/#LB Install'n <br> (Machine)/#CS Detection / Air Pressing</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="LB_cont">
@@ -899,12 +1275,21 @@ require_once('./libraries/includes.php');
                                 <div class="row mb-5">
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">Airblowing </span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="full_assy_cont">
@@ -914,12 +1299,21 @@ require_once('./libraries/includes.php');
 
                                     <div class="col-md-4">
                                         <div class="input-group mb-4 mt-4" style="flex-direction: column; align-items: center; width: 100%;">
-                                            <span class="input-group-text w-16.7 text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">MPC/HVT</span>
-                                            <select class="form-select" id="" name="" style="width: 100%;">
-                                                <option selected disabled value="0">Select Series</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <span class="input-group-text text-light" style="background-color: DodgerBlue; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center;">
+                                                Full Assembly
+                                            </span>
+                                            <div class="input-group mb-3">
+                                                <select class="form-select">
+                                                    <option selected disabled value="0">Select Series</option>
+                                                    <option value="NP645">NP645</option>
+                                                    <option value="NP537">NP537</option>
+                                                    <option value="NP635">NP635</option>
+                                                    <option value="NP562">NP562</option>
+                                                </select>
+                                                <button type="button" class="btn text-light" style="background-color: #5499c7" id="add_series_btn">
+                                                    <i class="fa fa-plus fa-md me-2" style="color: white"></i>Add
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="SP_Assy_cont">
