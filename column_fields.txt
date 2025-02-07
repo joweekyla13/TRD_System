@@ -1,0 +1,163 @@
+btnSubmitTrainingRequest
+formAddTrainingRequest
+newTraineeModal
+
+pkid
+date_time_created
+conno
+current_date
+department
+section
+job_function
+area_line
+reason
+fkEmpNo
+from_station_prod
+to_station_prod
+requestor
+approver
+email
+isConformed
+isReceived
+isHeadApproval
+logdel
+
+tblConformance
+tblReceiving
+tblApproval
+
+
+
+function add_memo() {
+		require_once('../class/oop_trds.php');
+		$return = $_POST;
+		$table  = "tbl_memo";
+	
+		// Collect form fields common to all rows (outside the table data)
+		$docno = $return['docno'];
+		$classification = $return['classification'];
+		$reason = $return['reason'];
+		$memo_to = $return['to'];
+		$memo_from = $return['from'];
+		$subject = $return['subject'];
+		$date_now = $return['date_now'];
+		$department = $return['department'];
+		$section = $return['section'];
+		$preparedby = $return['preparedby'];
+		$notedby = $return['notedby'];
+	
+		// Collect table rows data (which is an array of employee data)
+		$rows = $return['rows']; // Assuming 'rows' contains an array of table row data
+	
+		foreach ($rows as $row) {
+			// Extract each employee's data
+			$empNo = $row['empNo'];
+			$fullname = $row['fullname'];
+			$date_hired = $row['date_hired'];
+			$pds = $row['pds'];
+			$fromto = $row['fromto'];
+			$venue = $row['venue'];
+			$endorsementDate = $row['endorsementDate'];
+			$remarks = $row['remarks'];
+			$title = $row['title'];
+	
+			// Prepare array for insert or update query
+			$array_fields = array(
+				'docno', 'classification', 'reason', 'memo_to', 'memo_from', 'subject', 'date_now',
+				'department', 'section', 'empNo', 'fullname', 'date_hired', 'pds', 'fromto',
+				'venue', 'endorsementDate', 'remarks', 'title', 'preparedby', 'notedby'
+			);
+	
+			$array_values = array(
+				$docno, $classification, $reason, $memo_to, $memo_from, $subject, $date_now,
+				$department, $section, $empNo, $fullname, $date_hired, $pds, $fromto, $venue,
+				$endorsementDate, $remarks, $title, $preparedby, $notedby
+			);
+	
+			// Insert or update for each row
+			$pkid = isset($row['pkid']) ? $row['pkid'] : ''; // Adjust if you have PKID
+			if (empty($pkid)) {
+				$query_result = User_trds::getInstance()->insert_query($table, $array_fields, $array_values);
+			} else {
+				$query_result = User_trds::getInstance()->update_query($table, $array_fields, $array_values, $pkid);
+			}
+		}
+	
+		$return["result"] = json_encode($query_result);
+		echo json_encode($return);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,270 @@
+<?php
+	/*
+	 * Script:    DataTables server-side script for PHP and MySQL
+	 * Copyright: 2010 - Allan Jardine
+	 * License:   GPL v2 or BSD (3-point)
+	 */
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Easy set variables
+	 */
+	
+	/* Array of database columns which should be read and sent back to DataTables. Use a space where
+	 * you want to insert a non-database field (for example a counter or static image)
+	 */
+	 // error_reporting(E_ALL);
+	 // ini_set('display_errors', 1);
+
+	$aColumns = array('pkid','date_time_created','endorsement_docno','endo_to','endo_attn','endo_subject','endo_hr_memo','endo_tr_ctrlno','endo_date_now','endo_date_hired','endo_empno','endo_fullname','endo_pds','endo_title','endo_remarks','endo_preparedby','endo_notedby','endo_approvedby');
+	
+	/* used this field for searching data typed in the search box */
+	// $array_search = array('empno', 'LastName',
+							// 'date', 'date_out');
+	// $array_search = array('empno', 'LastName');
+							
+	/* Indexed column (used for fast and accurate table cardinality) */
+	$sIndexColumn = "pkid";
+	
+	/* DB table to use */
+	$sTable = "tbl_training_endorsement";
+	
+	$database_config = '../db_config/db_trds.php';
+	
+	if(!file_exists($database_config)){
+		echo "config file does not exist!";
+		exit;
+	} else {
+		require_once($database_config);
+	}
+	
+	/* Database connection information */
+	$gaSql['user']       = $username;
+	$gaSql['password']   = $password;
+	$gaSql['db']         = $db_name;
+	$gaSql['server']     = $server;
+	
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * If you just want to use the basic configuration for DataTables with PHP server-side, there is
+	 * no need to edit below this line
+	 */
+	
+	/* 
+	 * MySQL connection
+	 */
+	$gaSql['link'] =  mysql_pconnect( $gaSql['server'], $gaSql['user'], $gaSql['password']  ) or
+		die( 'Could not open connection to server' );
+	
+	mysql_select_db( $gaSql['db'], $gaSql['link'] ) or 
+		die( 'Could not select database '. $gaSql['db'] );
+	
+	
+	/* 
+	 * Paging
+	 */
+	$sLimit = "";
+	if ( isset( $_GET['iDisplayStart'] ) && $_GET['iDisplayLength'] != '-1' )
+	{
+		$sLimit = "LIMIT ".mysql_real_escape_string( $_GET['iDisplayStart'] ).", ".
+			mysql_real_escape_string( $_GET['iDisplayLength'] );
+	}
+		
+	/*
+	 * Ordering
+	 */
+	if ( isset( $_GET['iSortCol_0'] ) )
+	{
+		$sOrder = "ORDER BY  ";
+		for ( $i=0 ; $i<intval( $_GET['iSortingCols'] ) ; $i++ )
+		{
+			if ( $_GET[ 'bSortable_'.intval($_GET['iSortCol_'.$i]) ] == "true" )
+			{
+				$sOrder .= $aColumns[ intval( $_GET['iSortCol_'.$i] ) ]."
+				 	".mysql_real_escape_string( $_GET['sSortDir_'.$i] ) .", ";
+			}
+		}
+		
+		$sOrder = substr_replace( $sOrder, "", -2 );
+		if ( $sOrder == "ORDER BY" )
+		{
+			$sOrder = "";
+		}
+	}
+	
+	
+	/* 
+	 * Filtering
+	 * NOTE this does not match the built-in DataTables filtering which does it
+	 * word by word on any field. It's possible to do here, but concerned about efficiency
+	 * on very large tables, and MySQL's regex functionality is very limited
+	 */
+	 
+	 /* wag gagalawin yung sWhere default to para sa searchbox ng datatables check mo sa baba kung pano gagawin mo :) */
+	$sWhere = "";
+	if ( $_GET['sSearch'] != "" )
+	{
+		$sWhere = "WHERE (";
+		for ( $i=0 ; $i<count($aColumns) ; $i++ )
+		{
+			// if( in_array($aColumns[$i],$array_search) ){
+			$sWhere .= $aColumns[$i]." LIKE '%".mysql_real_escape_string( $_GET['sSearch'] )."%' OR ";
+			// }
+		}
+		$sWhere = substr_replace( $sWhere, "", -3 );
+		$sWhere .= ')';
+	}
+	
+	/* Individual column filtering */
+	for ( $i=0 ; $i<count($aColumns) ; $i++ )
+	{
+		if ( $_GET['bSearchable_'.$i] == "true" && $_GET['sSearch_'.$i] != '' )
+		{
+			if ( $sWhere == "" )
+			{
+				$sWhere = "WHERE ";
+			}
+			else
+			{
+				$sWhere .= " AND ";
+			}
+			$sWhere .= $aColumns[$i]." LIKE '%".mysql_real_escape_string($_GET['sSearch_'.$i])."%' ";
+		}
+	}
+	
+	/* 
+		dito ka mag add ng where mo, una check mo kung may laman na yung $sWhere pag wala append mo yung where mo na meron
+		kasama where kapag naman may laman na AND na syempre diba :)
+	*/
+	
+	if($sWhere == ""){
+		$sWhere .= "WHERE  ";
+	}else{
+		$sWhere .= "AND ";
+	}
+	$sWhere .= " logdel=0";
+	
+	if($sOrder == ""){
+		$sOrder = 'ORDER BY date_time_created DESC';
+	}
+    
+	/*
+	 * SQL queries
+	 * Get data to display
+	 */
+	$sQuery = "
+		SELECT SQL_CALC_FOUND_ROWS DISTINCT endorsement_docno, ".str_replace(" , ", " ", implode(", ", $aColumns))."
+		FROM $sTable
+		
+		$sWhere
+		GROUP BY endorsement_docno
+		$sOrder
+		$sLimit
+	";
+	$rResult = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
+	
+	// echo "limit: ".$sLimit." : ".$sQuery."<hr>";
+	$query_used = $sQuery;
+	// echo $query_used."<br>";
+	
+	/* Data set length after filtering */
+	$sQuery = "
+		SELECT FOUND_ROWS()
+	";
+	$rResultFilterTotal = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
+	$aResultFilterTotal = mysql_fetch_array($rResultFilterTotal);
+	$iFilteredTotal = $aResultFilterTotal[0];
+	
+	/* Total data set length */
+	$sQuery = "
+		SELECT COUNT(".$sIndexColumn.")
+		FROM   $sTable
+	";
+	$rResultTotal = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
+	$aResultTotal = mysql_fetch_array($rResultTotal);
+	$iTotal = $aResultTotal[0];
+	
+	/*
+	 * Output
+	 */
+	$output = array(
+		"sEcho" => intval($_GET['sEcho']),
+		"iTotalRecords" => $iTotal,
+		"iTotalDisplayRecords" => $iFilteredTotal,
+		"aaData" => array()
+	);
+	while ( $aRow = mysql_fetch_array( $rResult ) )
+	{
+		$row = array();
+		unset($row);
+        $row[] = $aRow['endorsement_docno'];
+		$row[] = $aRow['endo_hr_memo'];
+		$row[] = $aRow['endo_tr_ctrlno'];
+		$row[] = $aRow['date_time_created'];
+
+        // if ($aRow['isConformed'] == 0) {
+        //     $row[] = '<center><span class="badge bg-secondary text-light"><span>Pending</span></span></center>';
+        // } elseif ($aRow['isConformed'] == 1) {
+        //     $row[] = '<center><span class="badge bg-success text-light"><span>Conformed</span></span></center>';
+        // } elseif ($aRow['isConformed'] == 2) {
+        //     $row[] = '<center><span class="badge bg-warning text-dark"><span>ForRevision</span></span></center>';
+        // } elseif ($aRow['isConformed'] == 3) {
+        //     $row[] = '<center><span class="badge bg-danger text-light"><span>Rejected</span></span></center>';
+        // }
+
+        // if ($aRow['isReceived'] == 0) {
+        //     $row[] = '<center><span class="badge bg-secondary text-light"><span>Pending</span></span></center>';
+        // } elseif ($aRow['isReceived'] == 1) {
+        //     $row[] = '<center><span class="badge bg-success text-light"><span>Received</span></span></center>';
+        // } elseif ($aRow['isReceived'] == 2) {
+        //     $row[] = '<center><span class="badge bg-warning text-dark"><span>ForRevision</span></span></center>';
+        // } elseif ($aRow['isReceived'] == 3) {
+        //     $row[] = '<center><span class="badge bg-danger text-light"><span>Rejected</span></span></center>';
+        // }
+
+        // if ($aRow['isHeadApproval'] == 0) {
+        //     $row[] = '<center><span class="badge bg-secondary text-light"><span>Pending</span></span></center>';
+        // } elseif ($aRow['isHeadApproval'] == 1) {
+        //     $row[] = '<center><span class="badge bg-success text-light"><span>Approved</span></span></center>';
+        // } elseif ($aRow['isHeadApproval'] == 2) {
+        //     $row[] = '<center><span class="badge bg-warning text-dark"><span>ForRevision</span></span></center>';
+        // } elseif ($aRow['isHeadApproval'] == 3) {
+        //     $row[] = '<center><span class="badge bg-danger text-light"><span>Rejected</span></span></center>';
+        // }
+
+		$row[]  = '<center>
+			<button type="button" 
+				data-bs-toggle="modal" 
+				data-bs-target="#modalViewTREndo" 
+				class="btn btn-primary fa-solid fa-file btn_view" 
+				style="color:white"
+				id="btn_view" 
+				value="'.$aRow['pkid'].'" 
+
+				data-pkid="'.$aRow['pkid'].'" 
+				data-endorsement_docno="'.$aRow['endorsement_docno'].'" 
+				data-endo_to="'.$aRow['endo_to'].'" 
+				data-endo_attn="'.$aRow['endo_attn'].'" 
+				data-endo_subject="'.$aRow['endo_subject'].'" 
+				data-endo_hr_memo="'.$aRow['endo_hr_memo'].'" 
+				data-endo_tr_ctrlno="'.$aRow['endo_tr_ctrlno'].'" 
+				data-endo_date_now="'.$aRow['endo_date_now'].'" 
+				data-endo_hr_tu="'.$aRow['endo_hr_tu'].'" 
+				data-endo_tu_requestor="'.$aRow['endo_tu_requestor'].'" 
+				data-endo_date_hired="'.$aRow['endo_date_hired'].'" 
+				data-endo_empno="'.$aRow['endo_empno'].'" 
+				data-endo_fullname="'.$aRow['endo_fullname'].'" 
+				data-endo_pds="'.$aRow['endo_pds'].'" 
+				data-endo_title="'.$aRow['endo_title'].'" 
+				data-endo_remarks="'.$aRow['endo_remarks'].'" 
+				data-endo_preparedby="'.$aRow['endo_preparedby'].'" 
+				data-endo_notedby="'.$aRow['endo_notedby'].'" 
+				data-endo_approvedby="'.$aRow['endo_approvedby'].'" 
+				>
+			</button>';
+
+		array_push($output['aaData'],$row);
+	}
+	
+	echo json_encode( $output );
+
+?>

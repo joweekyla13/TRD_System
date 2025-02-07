@@ -1,0 +1,334 @@
+<th>pkid</th>
+<th>date_time_created</th>
+<th>doc_no</th>
+<th>classification</th>
+<th>reason</th>
+<th>to</th>
+<th>from</th>
+<th>subject</th>
+<th>date_now</th>
+<th>department</th>
+<th>section</th>
+<th>fkEmpNo</th>
+<th>isQueued</th>
+<th>isConformed</th>
+<th>forRevision</th>
+<th>isRejected </th>
+
+
+
+{ "data": "pkid" },
+{ "data": "date_time_created" },
+{ "data": "doc_no" },
+{ "data": "classification" },
+{ "data": "reason" },
+{ "data": "to" },
+{ "data": "from" },
+{ "data": "subject" },
+{ "data": "date_now" },
+{ "data": "department" },
+{ "data": "section" },
+{ "data": "EmpNo" },
+{ "data": "isQueued" },
+{ "data": "isConformed" },
+{ "data": "forRevision" },
+{ "data": "isRejected" }
+
+
+	// function get_pkid() {
+	// 	require_once('../class/oop_trds.php');
+
+	// 	$array_fields = array('pkid', 'docno');
+	// 	$table        = "tbl_memo";
+	// 	$joins        = '';
+	// 	$sql_where 	  = '';
+	// 	$sql_order    = '';
+	// 	$sql_limit    = '';
+	// 	$query_result = User_trds::getInstance()->select_query($array_fields, $table, $joins, $sql_where, $sql_order, $sql_limit);
+	// 	$data = array();
+	// 	while($row = mysqli_fetch_assoc($query_result)){
+	// 		$data[] = $row['pkid'];
+	// 	}
+	
+	// 	echo json_encode($data);
+	// }
+
+
+
+
+	// GETTING THE USERNAME EQUAL TO NOTED BY
+    $('#textNotedBy').on('change', function () {
+        let noted_by = $(this).val();
+
+        if(noted_by){
+            $.ajax({
+            type: "POST",
+            url: handler,
+            data: {
+                "action": "get_username",
+                "textNotedBy": noted_by
+            },
+            dataType: "json",
+            success: function (response) {
+                if(response.username){
+                    $('#textUsername').val(response.username);
+                }else{
+                    $('#textUsername').val('');
+                }
+                }
+            });
+        }
+    });
+
+
+	function get_username(){
+		require_once('../class/oop.php');
+
+		$array_fields = array('username');
+		$table        = "vw_employee";
+		$joins        = '';
+		$sql_where 	  = 'WHERE emp_name = "' . $_POST['textNotedBy']'"';
+		$sql_order    = '';
+		$sql_limit    = '';
+		$query_result = User::getInstance()->select_query($array_fields, $table, $joins, $sql_where, $sql_order, $sql_limit);
+		$data = array();
+		while($row = mysqli_fetch_assoc($query_result)){
+			$data[] = $row['username'];
+		}
+	}
+
+	<?php
+//============================================================+
+// File name   : example_011.php
+// Begin       : 2008-03-04
+// Last Update : 2013-05-14
+//
+// Description : Example 011 for TCPDF class
+//               Colored Table (very simple table)
+//
+// Author: Nicola Asuni
+//
+// (c) Copyright:
+//               Nicola Asuni
+//               Tecnick.com LTD
+//               www.tecnick.com
+//               info@tecnick.com
+//============================================================+
+
+/**
+ * Creates an example PDF TEST document using TCPDF
+ * @package com.tecnick.tcpdf
+ * @abstract TCPDF - Example: Colored Table
+ * @author Nicola Asuni
+ * @since 2008-03-04
+ */
+
+// Include the main TCPDF library (search for installation path).
+require_once('/TCPDF-main/tcpdf.php');
+require_once('db_config/db_trds.php');
+
+// extend TCPF with custom functions
+class MYPDF extends TCPDF {
+
+    // Load table data from file
+    public function LoadData() {
+        // Read file lines
+        $select = "SELECT fkdate_hired, fkEmpNo, fkfullname, fkpds, fktitl, fkremarks FROM tbl_training_request";
+        $query = mysqli_query($conn, $select);
+        return $query;
+    }
+
+    // Colored table
+    public function ColoredTable($header,$data) {
+        // Colors, line width and bold font
+        $this->SetFillColor(255, 0, 0);
+        $this->SetTextColor(255);
+        $this->SetDrawColor(128, 0, 0);
+        $this->SetLineWidth(0.3);
+        $this->SetFont('', 'B');
+        // Header
+        $w = array(30, 25, 25, 25, 25, 25);
+        $num_headers = count($header);
+        for($i = 0; $i < $num_headers; ++$i) {
+            $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C', 1);
+        }
+        $this->Ln();
+        // Color and font restoration
+        $this->SetFillColor(224, 235, 255);
+        $this->SetTextColor(0);
+        $this->SetFont('');
+        // Data
+        $fill = 0;
+        foreach($data as $row) {
+            $this->Cell($w[0], 6, $row['fkdate_hired'], 'LR', 0, 'L', $fill);
+            $this->Cell($w[1], 6, $row['fkEmpNo'], 'LR', 0, 'L', $fill);
+            $this->Cell($w[2], 6, $row['fkfullname'], 'LR', 0, 'L', $fill);
+            $this->Cell($w[3], 6, $row['fkpds'], 'LR', 0, 'L', $fill);
+            $this->Cell($w[4], 6, $row['fktitle'], 'LR', 0, 'L', $fill);
+            $this->Cell($w[5], 6, $row['fkremarks'], 'LR', 0, 'L', $fill);
+
+            $this->Ln();
+            $fill=!$fill;
+        }
+        $this->Cell(array_sum($w), 0, '', 'T');
+    }
+}
+
+// create new PDF document
+$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+// set document information
+$pdf->SetCreator(PDF_CREATOR);
+$pdf->SetAuthor('Nicola Asuni');
+$pdf->SetTitle('TCPDF Example 011');
+$pdf->SetSubject('TCPDF Tutorial');
+$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+
+// set default header data
+$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 011', PDF_HEADER_STRING);
+
+// set header and footer fonts
+$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
+// set default monospaced font
+$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+// set margins
+$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
+// set auto page breaks
+$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+// set image scale factor
+$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
+// set some language-dependent strings (optional)
+if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
+    require_once(dirname(__FILE__).'/lang/eng.php');
+    $pdf->setLanguageArray($l);
+}
+
+// ---------------------------------------------------------
+
+// set font
+$pdf->SetFont('helvetica', '', 12);
+
+// add a page
+$pdf->AddPage();
+
+// column titles
+$header = array('fkdate_hired','fkEmpNo','fkfullname','fkpds','fktitle','fkremarks');
+
+// data loading
+$data = $pdf->LoadData();
+
+// print colored table
+$pdf->ColoredTable($header, $data);
+
+// ---------------------------------------------------------
+
+// close and output PDF document
+$pdf->Output('pdf.pdf', 'I');
+
+//============================================================+
+// END OF FILE
+//============================================================+
+
+
+
+
+<input class="form-control" type="text" id="textTo" name="to" list="to" placeholder="To" multiple>
+    <datalist id="to">
+        <!-- options go here -->
+    </datalist>
+                                    
+<input type="hidden" name="selectedValues" id="selectedValues">
+
+    let selectedOptions = [];
+
+    $('#textTo').on('input', function() {
+        const value = $(this).val().trim();
+
+        // Check if the value is non-empty
+        if (value) {
+            // Check if the value is already selected
+            if (selectedOptions.includes(value)) {
+                // If it's already selected, remove it from the array
+                removeOption(value);
+            } else {
+                // If it's not selected, add it to the array
+                selectedOptions.push(value);
+            }
+
+            // Clear the input field so the user can select another option
+            $('#textTo').val('');
+
+            // Update the hidden input field with the selected values
+            $('#selectedValues').val(selectedOptions.join(', '));
+
+            // Display the selected options as tags
+            renderSelectedOptions();
+        }
+    });
+
+    // Function to render the selected options as tags
+    function renderSelectedOptions() {
+        $('#selectedOptions').find('span').remove(); // Clear existing tags, but keep the input
+
+        selectedOptions.forEach(function(option) {
+            // Create a tag for each selected option
+            const tag = $('<span>').addClass('badge bg-primary me-1').text(option);
+
+            // Add a remove button to the tag
+            const removeBtn = $('<span>').html(' &times;').css('cursor', 'pointer').on('click', function() {
+                removeOption(option);
+            });
+
+            // Append the remove button to the tag
+            tag.append(removeBtn);
+
+            // Append the tag to the selectedOptions container before the input field
+            $('#selectedOptions').prepend(tag);
+        });
+    }
+
+    // Function to remove a selected option
+    function removeOption(option) {
+        // Remove the option from the array
+        selectedOptions = selectedOptions.filter(function(item) {
+            return item !== option;
+        });
+
+        // Update the hidden input field
+        $('#selectedValues').val(selectedOptions.join(', '));
+
+        // Re-render the selected options
+        renderSelectedOptions();
+    }
+
+    // GETTING "TO" FROM tbl_useraccnt
+    let to = {
+            "action": "get_to",
+        }
+        to = $.param(to) + "&" + $('#textTo').serialize();
+
+        $.ajax({
+        type: "POST",
+        url: handler,
+        
+        data: to,
+        dataType: "json",
+        success: function (response) {
+            let dataList = $('#to');
+            dataList.empty();
+            $.each(response, function(index, value) {
+                dataList.append('<option value="' + value + '"></option>');
+            });
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error: ' + status + error);
+        }
+    });
